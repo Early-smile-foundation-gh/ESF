@@ -326,6 +326,121 @@ input, select, textarea {
 	.align-right {
 		text-align: right;
 	}
+/* statistics */
+	* {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+	}
+
+	.impact-section {
+		position: relative;
+		width: 100%;
+		height: 80vh;
+		overflow: hidden;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		transition: background-color 0.3s ease-in-out;
+	}
+
+	.impact-section img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		position: absolute;
+		z-index: -1;
+	}
+
+	.impact-text {
+		display: flex;
+		gap: 50px; /* Space between statistics */
+		text-align: center;
+		color: rgb(255, 255, 255);
+			font-family: "Playwrite IN", serif;
+			font-weight: 400;
+			font-style: normal;
+		  }
+
+
+	.impact-item {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		transition: transform 0.3s ease-in-out;
+	}
+
+	.highlight {
+		position: relative;
+		font-size: 3rem; /* Bigger number */
+		font-weight: bold;
+		color: rgb(251, 238, 0);
+		padding: 10px 20px;
+		border-radius: 60px;
+		transition: transform 0.3s ease-in-out, background 0.4s ease-in-out;
+	}
+
+	/* Background will appear when the entire section is hovered */
+	.impact-section:hover .highlight {
+		color: rgb(10, 9, 0);
+		opacity: 1; /* Opacity for the background */
+	}
+
+	.impact-label {
+		font-size: 1.4rem;
+		font-weight: normal;
+		margin-top: 5px;
+		transition: transform 0.3s ease-in-out, background 0.4s ease-in-out;
+		font-family: "Playwrite IN", serif;
+			font-weight: 400;
+			font-style: normal;
+	}
+
+	/* Hover Effect for Statistics */
+	.impact-section:hover .impact-item {
+		transform: scale(1.05);
+	}
+
+	.impact-section:hover .highlight {
+		transform: scale(1.2); /* Enlarge the numbers on hover */
+	}
+
+	/* Hidden by default, will appear on hover */
+	.total-impact {
+		position: absolute;
+		bottom: 20px;
+		left: 50%;
+		transform: translateX(-50%);
+		text-align: center;
+		padding: 20px;
+		color: rgb(255, 147, 6);
+		font-size: 2.9rem;
+		font-weight: bold;
+		border-radius: 50px;
+		transition: opacity 0.7s ease-in-out, visibility 0.9s ease-in-out;
+		opacity: 0; /* Hidden by default */
+		visibility: hidden; /* Hidden by default */
+	}
+
+	.total-impact .total-highlight {
+		font-size: 4rem;
+	}
+
+	/* Show the Total Impact on hover */
+	.impact-section:hover .total-impact {
+		opacity: 1; /* Make it visible */
+		visibility: visible; /* Make it visible */
+	}
+
+	@media (max-width: 768px) {
+		.impact-text {
+			flex-direction: column; /* Stack on smaller screens */
+			gap: 30px;
+		}
+	}
+	
+	
+
 
 /* Row */
 
